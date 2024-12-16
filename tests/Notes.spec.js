@@ -11,6 +11,8 @@
   Write css based on any Attribute
   css -> tagname[attribute='value0']
   tagname is not required, it is useful if there's more than one element with same att
+  when the locator returns two or more elements but only one is visible, it could be filtered
+  by adding sufix `:visible`
 
   Write css with traversing from Parent to child
   css -> parentTagName >> childTagName
