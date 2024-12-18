@@ -1,8 +1,6 @@
 import { test, expect, request } from '@playwright/test';
 import { APIUtils } from './utils/APIUtils';
 
-const email = "roman.g.rodriguez@gmail.com";
-const password = "Imking@000";
 // const loginPayload = {userEmail: email, userPassword: password}
 let token;
 let response
@@ -11,6 +9,8 @@ let productId = "6581ca979fd99c85e8ee7faf";
 test.beforeAll( async () =>{
   // LOT OF CODE WAS EXTRACTED TO APIUtils (see previous commit)
   // performs request to get token
+  const email = "roman.g.rodriguez@gmail.com";
+  const password = "Imking@000";
   const apiContext = await request.newContext();
   const ApiUtils = new APIUtils(apiContext, email, password);
   response = await ApiUtils.createOrder("Argentina", productId);
