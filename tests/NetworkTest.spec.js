@@ -14,6 +14,8 @@ test.beforeAll(async ({browser}) => {
 
   webContext = await browser.newContext({storageState:'state.json'});
 
+  page.close();
+
 });
 
 
@@ -34,5 +36,20 @@ test('Security test request intercept', async () => {
   const message = await page.locator('.blink_me').textContent();
 
   expect(message).toBe('You are not authorize to view this order');
+
+});
+
+
+test('Blocking requests to mimic server not responding to a certain request', async () => {
+  // Useful to reduce number of unnecesary requests making tests faster
+  // E.g. images
+
+  const page = await webContext.newPage();
+  await page.route("**/*.{jpg,jpeg,png}", route => route.abort());
+  await page.goto('https://rahulshettyacademy.com/client');
+
+  page.on('request', request => console.log(request.url()));
+  
+  console.log('images should not be displayed on the page');
 
 });
