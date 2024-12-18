@@ -33,7 +33,7 @@ module.exports = defineConfig({
       trace: 'on-first-retry',
       trace: 'retain-on-failure',
     */
-      trace: 'retain-on-failure',
+    trace: 'on',
     browserName: 'chromium',
     headless: false,
     
