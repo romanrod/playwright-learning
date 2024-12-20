@@ -12,6 +12,7 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 module.exports = defineConfig({
   testDir: './tests',
+  timeout: 30 * 1000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -36,6 +37,15 @@ module.exports = defineConfig({
     trace: 'on',
     browserName: 'chromium',
     headless: false,
+
+    // Record videos of tests when running on CI
+    // video: 'retain-on-failure',
+
+    // To skip SSL errors and click on advanced button in https error page
+    // ignoreHTTPSErrors: true,
+
+    // Auto accept popups
+    // permissions: ['geolocation', 'notifications'],
     
   },
 
@@ -65,6 +75,12 @@ module.exports = defineConfig({
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: { 
+    //     viewport: {width: 375, height: 812}
+    //   },
+    // }
 
     /* Test against branded browsers. */
     // {
