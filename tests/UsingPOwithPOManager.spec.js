@@ -15,6 +15,8 @@ test.beforeAll(async ({browser}) => {
   po = new POManager(page);
 });
 
+test.describe.configure({mode: 'parallel'});
+
 test('Using page object pattern for login only', async ({page}) => {  
   const loginPage = po.getLoginPage();
   await loginPage.goto();
