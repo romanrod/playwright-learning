@@ -63,8 +63,6 @@ test('User add product to cart', async ({page}) => {
 
   await page.locator('.input').nth(3).fill('123');
 
-  await page.locator('.input').nth(3).fill('123');
-  
   await page.locator('.input').nth(4).fill('ROMAN RODRIGUEZ');
 
   await page.locator('.btnn').click();
@@ -94,3 +92,5 @@ test('User add product to cart', async ({page}) => {
   await page.locator('tbody').locator('.ng-star-inserted').getByRole('button', {name: 'Delete'}).click();
 
 });
+
+
