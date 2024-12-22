@@ -24,7 +24,7 @@ test.beforeAll( async () =>{
 
 */
 
-test('Usgin API to get logged in faster and avoid UI for that', async({page}) =>{
+test('@api Usgin API to get logged in faster and avoid UI for that', async({page}) =>{
   // sets token into session storage using result from beforeAll()  hook
   page.addInitScript(value => 
     {
@@ -39,7 +39,7 @@ test('Usgin API to get logged in faster and avoid UI for that', async({page}) =>
 });
 
 
-test('Replace Add order UI operation with request to make test faster', async({page}) => {
+test('@api Replace Add order UI operation with request to make test faster', async({page}) => {
   // For cases where place order action is already tested on another test and we need to place an order as precondition
   page.addInitScript(value => 
     {
