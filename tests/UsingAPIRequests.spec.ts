@@ -2,7 +2,7 @@ import { test, expect, request } from '@playwright/test';
 import { APIUtils } from '../utils_ts/APIUtils';
 
 // const loginPayload = {userEmail: email, userPassword: password}
-let token;
+let token: string;
 let response
 let productId = "6581ca979fd99c85e8ee7faf";
 
