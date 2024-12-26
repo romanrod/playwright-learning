@@ -15,7 +15,7 @@ test('Basis UI with default browser by using page global object', async ({page})
   await expect(page).toHaveTitle('Google');
 });
 
-test.only('UI controls', async ({page}) => {
+test('UI controls', async ({page}) => {
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/#/');
   const userName = page.locator('#username');
   const signIn = page.locator('#signInBtn');
