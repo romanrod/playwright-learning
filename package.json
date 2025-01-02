@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx playwright test tests/UsingAPIRequests.spec.js --headed",
     "open-ui": "npx playwright test --ui",
-    "cucumber": "npx cucumber-js --exit"
+    "cucumber": "npx cucumber-js --exit",
+    "regression": "npx cucumber-js --tags '@regression' --exit"
   },
   "keywords": [],
   "author": "",

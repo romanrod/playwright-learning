@@ -1,8 +1,9 @@
 const { expect } = require('@playwright/test');
 const { Given, When, Then } = require('@cucumber/cucumber');
+const { POManager } = require('../../pageobjects/POManager');
 
 Given('I am logged in as a customer with {string} and {string}', async function(email, password) {
-  
+  this.po = new POManager(this.page);
   const loginPage = this.po.getLoginPage();
   await loginPage.goto();
   loginPage.loginWith(email, password);
@@ -25,3 +26,18 @@ Then('the product should be in the carts', async function () {
   
   expect(await checkoutPage.title.textContent()).toBe(' Thankyou for the order. ');
 }); 
+
+
+Given('I am logged in practise ecommerce with {string} and {string}', async function (email, password) {
+  
+  
+  await this.page.goto('https://rahulshettyacademy.com/loginpagePractise/#/');
+  await this.page.locator('#username').fill(email);
+  await this.page.locator("[type='password']").fill(password);
+  await this.page.locator('#signInBtn').click();  
+});
+
+Then('I should see the message {string}', async function (string) {
+  await expect(this.page.locator("[style*='block']")).toHaveText('Incorrect username/password.');
+  await expect(this.page).toHaveTitle('LoginPage Practise | Rahul Shetty Academy');
+});

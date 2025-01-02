@@ -8,7 +8,7 @@ Before(async function () {
   });
   const context = await browser.newContext();
   this.page = await context.newPage();
-  this.po = new POManager(this.page);
+  
 });
 After(async function ({result}) {
   if(result.status === Status.FAILED){
