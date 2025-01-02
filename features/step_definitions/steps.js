@@ -1,16 +1,8 @@
-const playwright = require('@playwright/test');
 const { expect } = require('@playwright/test');
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { POManager } = require('../../pageobjects/POManager');
-
 
 Given('I am logged in as a customer with {string} and {string}', async function(email, password) {
-  const browser = await playwright.firefox.launch({
-    headless: false
-  });
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  this.po = new POManager(page);
+  
   const loginPage = this.po.getLoginPage();
   await loginPage.goto();
   loginPage.loginWith(email, password);
