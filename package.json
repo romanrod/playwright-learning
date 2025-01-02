@@ -7,7 +7,8 @@
     "test": "npx playwright test tests/UsingAPIRequests.spec.js --headed",
     "open-ui": "npx playwright test --ui",
     "cucumber": "npx cucumber-js --exit",
-    "regression": "npx cucumber-js --tags '@regression' --exit"
+    "regression": "npx cucumber-js --tags '@regression' --exit",
+    "parallel-with-report": "npx cucumber-js features/errorValidation.feature --parallel 2 --format html:cucumber-report.html --retry 1 --exit"
   },
   "keywords": [],
   "author": "",
