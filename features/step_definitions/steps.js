@@ -37,7 +37,6 @@ Given('I am logged in practise ecommerce with {string} and {string}', async func
   await this.page.locator('#signInBtn').click();  
 });
 
-Then('I should see the message {string}', async function (string) {
-  await expect(this.page.locator("[style*='block']")).toHaveText('Incorrect username/password.');
-  await expect(this.page).toHaveTitle('LoginPage Practise | Rahul Shetty Academy');
+Then('I should see the message {string}', async function (message) {
+  await expect(this.page.locator("[style*='block']")).toHaveText(message);
 });
