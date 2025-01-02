@@ -27,4 +27,4 @@ class DashboardPage {
 
 }
 
-module.exports = { DashboardPage };
+module.exports = DashboardPage;

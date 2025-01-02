@@ -1,7 +1,7 @@
-import { DashboardPage } from "./DashboardPage";
-import { LoginPage } from "./LoginPage";
-import { CheckoutPage } from "./CheckoutPage";
-import { CartPage } from "./CartPage";
+const DashboardPage = require("./DashboardPage");
+const LoginPage = require("./LoginPage");
+const CheckoutPage = require("./CheckoutPage");
+const CartPage = require("./CartPage");
 
 class POManager {
   constructor(page){

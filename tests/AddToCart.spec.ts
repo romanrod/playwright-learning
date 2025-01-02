@@ -1,9 +1,9 @@
 const {test, expect} = require('@playwright/test');
-const { customTest } = require('../utils_ts/test-base');
+const { customTest } = require('../utils_ts/customTest');
 
 test('User add product to cart', async ({page}) => {
   const email = "roman.g.rodriguez@gmail.com";
-  const productName = 'ZARA COAT 3';
+  const productName = 'ADIDAS ORIGINAL';
 
   await page.goto('https://rahulshettyacademy.com/client');
   await page.locator("#userEmail").fill(email);
@@ -90,7 +90,7 @@ test('User add product to cart', async ({page}) => {
 
   expect(firstOrderId === orderId).toBeTruthy();
 
-  await page.locator('tbody').locator('.ng-star-inserted').getByRole('button', {name: 'Delete'}).click();
+  await page.locator('tbody').locator('.ng-star-inserted').getByRole('button', {name: 'Delete'}).first().click();
 
 });
 
